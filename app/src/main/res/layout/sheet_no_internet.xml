@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".dialogs.NoInternetSheet">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_close"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginBottom="10dp"
+                app:lottie_rawRes="@raw/no_internet"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/oh_no"
+                android:fontFamily="@font/open_sans_extra_bold"
+                android:textColor="@color/color_app_purple"
+                android:textDirection="locale"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="@string/seems_like_your_internet_is_misbehaving_well_no_body_is_perfect"
+                android:textColor="@color/color_app_base_blue"
+                android:textDirection="locale"
+                android:textSize="17sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClose"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="@string/close"
+                app:backgroundTint="@color/color_app_pink"
+                android:theme="@style/Theme.MaterialComponents"
+                app:cornerRadius="10dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

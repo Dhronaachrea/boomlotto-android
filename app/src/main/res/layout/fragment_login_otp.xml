@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.boomlotto.viewmodels.LoginOtpViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.LoginOtpFragment">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_base_blue"
+                    android:textDirection="locale"
+                    android:textSize="24sp"
+                    android:text="@string/enter_the_code_we_just_sent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_base_blue"
+                    android:textDirection="locale"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="35dp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etOtp1"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/otp_box_blank"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:textDirection="locale"
+                        android:cursorVisible="false"
+                        android:maxLength="1"
+                        android:elevation="4dp"
+                        app:elevation="4dp"
+                        android:textSize="30sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etOtp2"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/otp_box_blank"
+                        android:gravity="center"
+                        android:textDirection="locale"
+                        android:cursorVisible="false"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:elevation="4dp"
+                        app:elevation="4dp"
+                        android:textSize="30sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etOtp3"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/otp_box_blank"
+                        android:gravity="center"
+                        android:textDirection="locale"
+                        android:cursorVisible="false"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:elevation="4dp"
+                        app:elevation="4dp"
+                        android:textSize="30sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etOtp4"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/otp_box_blank"
+                        android:gravity="center"
+                        android:textDirection="locale"
+                        android:cursorVisible="false"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:elevation="4dp"
+                        app:elevation="4dp"
+                        android:textSize="30sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#ff6700"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textDirection="locale" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvResendOtpLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_app_base_blue"
+                        android:textSize="16sp"
+                        android:textAlignment="viewStart"
+                        android:textDirection="locale"
+                        android:text="@string/didn_t_get_the_code_yet" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvResend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_app_pink"
+                        android:textSize="16sp"
+                        android:padding="12dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:textStyle="bold"
+                        android:textAlignment="viewStart"
+                        android:textDirection="locale"
+                        android:text="@string/resend" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llReferralCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnHaveReferral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
+                        app:cornerRadius="20dp"
+                        android:visibility="visible"
+                        android:text="@string/i_have_referral_code"
+                        android:textAllCaps="false"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/color_app_pink"
+                        android:textColor="@color/color_app_pink" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llReferralBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/referral_view_outline"
+                        android:gravity="center_vertical"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etReferralCode"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@null"
+                            android:hint="@string/enter_referral_code"
+                            android:textColorHint="#999999"
+                            android:inputType="textCapWords"
+                            android:imeOptions="actionDone"
+                            android:maxLength="8"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textAlignment="viewStart"
+                            android:textDirection="locale" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBarReferral"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="true"
+                            android:layout_margin="5dp"
+                            android:indeterminateTint="@color/color_app_pink"
+                            android:visibility="gone" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivReferral"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="5dp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardVerify"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            app:cardElevation="5dp"
+                            app:cardCornerRadius="10dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            app:cardBackgroundColor="@color/color_app_pink">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:textColor="@color/white"
+                                android:text="@string/verify"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:paddingStart="25dp"
+                                android:paddingEnd="25dp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvErrorReferralCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/color_app_orange"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textDirection="locale" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/pink_button_state"
+                    android:elevation="5dp"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="20dp"
+                    app:elevation="5dp"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

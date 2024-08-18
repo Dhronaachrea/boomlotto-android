@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "613833778771",
+    "project_id": "boom-lotto",
+    "storage_bucket": "boom-lotto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613833778771:android:aefb7658b0c2b1a5c388a6",
+        "android_client_info": {
+          "package_name": "com.skilrock.boomlotto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613833778771-rul2rr0ml9ghl0mtsptmer4f8s4mi801.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV98U3lQ47WOplIkn7kopDENsnY4oriSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613833778771-rul2rr0ml9ghl0mtsptmer4f8s4mi801.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

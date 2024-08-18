@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.boomlotto.viewmodels.WithdrawEmailVerificationViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragment_background_color"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.WithdrawEmailVerificationFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fragment_background_color"
+                android:gravity="start"
+                android:visibility="invisible"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_padding"
+                android:paddingEnd="@dimen/activity_padding"
+                android:paddingBottom="@dimen/activity_padding">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:cardBackgroundColor="#E5FBF5"
+                    app:cardCornerRadius="15dp"
+                    app:strokeColor="@color/color_app_green"
+                    app:strokeWidth="1.5dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_padding">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/your_current_boom_wallet_balance_is"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textDirection="locale"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/open_sans_extra_bold"
+                            android:gravity="center"
+                            android:textColor="@color/color_app_green"
+                            android:textDirection="locale"
+                            android:textSize="24sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvWithdrawAbleBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="#9900004c"
+                            android:textDirection="locale"
+                            android:textSize="16sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_marginTop="25dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_extra_bold"
+                        android:gravity="center"
+                        android:text="@string/withdraw_now"
+                        android:textColor="@color/color_app_base_blue"
+                        android:textDirection="locale"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvAmountIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/color_app_base_blue"
+                        android:textDirection="locale"
+                        android:textSize="16sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_marginTop="3dp"
+                    android:textColor="#9900004c"
+                    android:textDirection="locale"
+                    android:text="Withdrawal charges for amount less than AED 300 is AED 10 (within the UAE) and AED 20 (outside the UAE)."
+                    android:textSize="14sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/amount"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_app_base_blue"
+                    android:textDirection="locale" />
+
+                <com.skilrock.boomlotto.utility.BoomTextInputLayout
+                    android:id="@+id/tilAmount"
+                    style="@style/AppTextInputLayoutStyle"
+                    android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/enter_amount"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:text="@={viewModel.amount}"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_app_base_blue"
+                        android:textColorHint="#A7A8C2"
+                        android:textDirection="locale"
+                        android:textSize="16sp" />
+
+                </com.skilrock.boomlotto.utility.BoomTextInputLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llEmailBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:gravity="start">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="@string/email"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:textColor="@color/color_app_base_blue"
+                        android:textDirection="locale" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/withdraw_email_unfocused"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@null"
+                            android:hint="@string/enter_email_id"
+                            android:text="@={viewModel.email}"
+                            android:textColorHint="#A7A8C2"
+                            android:inputType="textEmailAddress"
+                            android:imeOptions="actionDone"
+                            android:textSize="16sp"
+                            android:maxLength="40"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textAlignment="viewStart"
+                            android:textDirection="locale" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBarOtp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="true"
+                            android:layout_margin="5dp"
+                            android:indeterminateTint="@color/color_app_pink"
+                            android:visibility="gone" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardGetOtp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            app:cardElevation="5dp"
+                            app:cardCornerRadius="10dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:onClick="@{()->viewModel.callEmailOtpApi()}"
+                            android:foreground="?attr/selectableItemBackground"
+                            app:cardBackgroundColor="@color/color_app_pink">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:textColor="@color/white"
+                                android:text="@string/get_otp"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:paddingStart="25dp"
+                                android:paddingEnd="25dp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvOtpSentText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#9900004c"
+                        android:textDirection="locale"
+                        android:visibility="gone"
+                        android:text="@string/we_have_sent_the_verification_code_to_your_email_id"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="@string/enter_otp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/color_app_base_blue"
+                        android:textDirection="locale" />
+
+                    <com.skilrock.boomlotto.utility.BoomTextInputLayout
+                        android:id="@+id/tilOtp"
+                        style="@style/AppTextInputLayoutStyle"
+                        android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etOtp"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_amount"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:maxLines="1"
+                            android:text="@={viewModel.otp}"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textColorHint="#A7A8C2"
+                            android:textDirection="locale"
+                            android:textSize="16sp" />
+
+                    </com.skilrock.boomlotto.utility.BoomTextInputLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#9900004c"
+                    android:textDirection="locale"
+                    android:text="@string/you_are_withdrawing_for_the_first_time_so_we_need_to_verify_some_details_just_two_simple_steps_for_this_time_only"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnContinue"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/pink_button_state"
+                    android:elevation="5dp"
+                    android:text="@string/continue_"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="20dp"
+                    app:elevation="5dp"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="transaction_menu">
+        <item>@string/today</item>
+        <item>@string/last_ten_transaction</item>
+        <item>@string/last_seven_days</item>
+        <item>@string/last_thirty_days</item>
+        <item>@string/last_six_months</item>
+        <item>@string/custom</item>
+    </string-array>
+
+    <string-array name="result_menu">
+        <item>@string/today</item>
+        <item>@string/last_seven_days</item>
+        <item>@string/last_thirty_days</item>
+        <item>@string/last_six_months</item>
+        <item>@string/custom</item>
+    </string-array>
+</resources>

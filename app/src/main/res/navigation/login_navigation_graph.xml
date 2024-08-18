@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/boom_lotto_navigation_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.skilrock.boomlotto.ui.fragment.LoginFragment"
+        android:label="LoginFragment">
+
+        <action
+            android:id="@+id/action_loginFragment_to_loginOtpFragment"
+            app:destination="@id/loginOtpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginOtpFragment"
+        android:name="com.skilrock.boomlotto.ui.fragment.LoginOtpFragment"
+        android:label="LoginOtpFragment">
+        <argument
+            android:name="loginOtpResponse"
+            app:argType="com.skilrock.boomlotto.models.response.LoginOtpResponse" />
+    </fragment>
+</navigation>

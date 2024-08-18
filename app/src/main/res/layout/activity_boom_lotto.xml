@@ -1,0 +1,582 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.boomlotto.viewmodels.BoomLottoViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/activity_background"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.activity.BoomLottoActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-20dp"
+                app:cardBackgroundColor="@color/fragment_background_color"
+                app:cardCornerRadius="20dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/scrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:background="@color/fragment_background_color"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llBoomLotto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:paddingStart="@dimen/activity_padding"
+                                android:paddingTop="@dimen/activity_padding"
+                                android:paddingEnd="@dimen/activity_padding"
+                                android:paddingBottom="2dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="12sp"
+                                    android:paddingTop="8dp"
+                                    android:paddingEnd="12sp"
+                                    android:paddingBottom="8dp">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tvJackpotTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="?attr/selectableItemBackgroundBorderless"
+                                        android:clickable="true"
+                                        android:drawableEnd="@drawable/icon_info"
+                                        android:drawablePadding="5dp"
+                                        android:focusable="true"
+                                        android:text="@string/jackpot_small"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/color_app_base_blue"
+                                        android:textDirection="locale"
+                                        android:textSize="13sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:ignore="TooDeepLayout" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tvJackpotAmount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-black"
+                                        android:text="@={viewModel.jackpotAmount}"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/color_app_base_blue"
+                                        android:textDirection="locale"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        app:fontFamily="sans-serif-black"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/tvJackpotTitle" />
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/ic_boom_five"
+                                        android:transitionName="boom_logo"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="start"
+                                        android:includeFontPadding="false"
+                                        android:text="@string/starts_in"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/color_app_base_blue"
+                                        android:textDirection="locale"
+                                        android:textSize="13sp" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="start"
+                                        android:includeFontPadding="false"
+                                        android:text="@string/next_draw_small"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/color_app_base_blue"
+                                        android:textDirection="locale"
+                                        android:textSize="13sp" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tvTimer"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="1"
+                                        android:gravity="start"
+                                        android:includeFontPadding="false"
+                                        android:text="@={viewModel.drawTimer}"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/color_app_base_blue"
+                                        android:textDirection="locale"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tvDrawDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="start"
+                                        android:includeFontPadding="false"
+                                        android:text="@={viewModel.drayDay}"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="@color/color_app_base_blue"
+                                        android:textDirection="locale"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvAlert"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:gravity="start"
+                                    android:includeFontPadding="false"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
+                                    android:text="@string/hurry_up"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/color_app_orange"
+                                    android:textDirection="locale"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    android:visibility="invisible" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginBottom="12dp"
+                                android:background="#DBE9F5" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvPanel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/activity_padding"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginEnd="@dimen/activity_padding"
+                                android:layout_marginBottom="2dp"
+                                android:layoutAnimation="@anim/layout_animation_fall_down" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:animateLayoutChanges="true"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingStart="@dimen/activity_padding"
+                                android:paddingTop="2dp"
+                                android:paddingEnd="@dimen/activity_padding"
+                                android:paddingBottom="5dp">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvAddLine"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:background="@drawable/select_draw_ripple"
+                                    android:clickable="true"
+                                    android:drawableStart="@drawable/add_icon_pink"
+                                    android:drawablePadding="6dp"
+                                    android:focusable="true"
+                                    android:paddingStart="@dimen/activity_padding"
+                                    android:paddingTop="8dp"
+                                    android:paddingEnd="@dimen/activity_padding"
+                                    android:paddingBottom="8dp"
+                                    android:text="@string/add_line"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/color_app_pink"
+                                    android:textDirection="locale"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvLineIntoDraw"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="8dp"
+                                    android:textColor="@color/color_app_base_blue"
+                                    android:textDirection="locale"
+                                    android:textSize="15sp" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="#DBE9F5" />
+
+                            <!--<com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/you_are_going_to_donate"
+                                android:textColor="@color/color_app_base_blue"
+                                android:textDirection="locale"
+                                android:textStyle="bold" />-->
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingStart="@dimen/activity_padding"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="@dimen/activity_padding"
+                                android:paddingBottom="5dp">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:orientation="vertical"
+                                    android:padding="5dp">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/you_are_going_to_donate"
+                                        android:textAllCaps="true"
+                                        android:textColor="@color/color_app_base_blue"
+                                        android:textDirection="locale"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="@string/helping_others_and_giving_hope"
+                                        android:textColor="#686694"
+                                        android:textDirection="locale"
+                                        android:textSize="14sp"
+                                        android:textStyle="italic" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="@string/is_great_humanity"
+                                        android:textColor="#686694"
+                                        android:textDirection="locale"
+                                        android:textSize="14sp"
+                                        android:textStyle="italic" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:id="@+id/cvCardCircleLightGrey"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        app:cardBackgroundColor="#e3e9ef"
+                                        app:cardCornerRadius="90dp"
+                                        app:cardElevation="0dp"
+                                        app:cardPreventCornerOverlap="true"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                    </androidx.cardview.widget.CardView>
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:id="@+id/shapeableImageView"
+                                        android:layout_width="35dp"
+                                        android:layout_height="35dp"
+                                        android:rotation="7"
+                                        android:layout_marginTop="11dp"
+                                        android:layout_marginStart="5dp"
+                                        android:scaleType="centerInside"
+                                        app:imageUrl="@{viewModel.imageUrl}"
+                                        app:layout_constraintBottom_toBottomOf="@+id/cvCardCircleLightGrey"
+                                        app:layout_constraintEnd_toEndOf="@+id/cvCardCircleLightGrey"
+                                        app:layout_constraintStart_toStartOf="@+id/cvCardCircleLightGrey"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tvDonationBadgeCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="start|top"
+                                        android:layout_marginBottom="5dp"
+                                        android:background="@drawable/badge_background"
+                                        android:gravity="center"
+                                        android:minWidth="18dp"
+                                        android:minHeight="18dp"
+                                        android:padding="3dp"
+                                        android:textColor="@android:color/white"
+                                        android:textDirection="locale"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="@+id/cvCardCircleLightGrey"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:ignore="SmallSp" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="6dp"
+                                    android:text="@={viewModel.donationItemName}"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/color_app_base_blue"
+                                    android:textStyle="bold" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@drawable/top_shadow_gradient" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:background="@color/fragment_background_color"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="8dp">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llSelectDraws"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="2"
+                            android:background="@drawable/select_draw_ripple"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvDrawCount"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/pink_ring"
+                                android:gravity="center"
+                                android:textColor="@color/color_app_pink"
+                                android:textDirection="locale"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="@string/select_ndraws"
+                                android:textAllCaps="true"
+                                android:textColor="@color/color_app_pink"
+                                android:textDirection="locale"
+                                android:textStyle="bold" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/llBuyNow"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:background="@drawable/buy_now_boom_ripple"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingStart="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="15dp"
+                            android:paddingBottom="5dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cvCardCircleLightPink"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                app:cardBackgroundColor="#e6005e"
+                                app:cardCornerRadius="90dp"
+                                app:cardElevation="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginStart="2dp"
+                                app:cardPreventCornerOverlap="true"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </androidx.cardview.widget.CardView>
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/ivBuyNow"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:scaleType="centerInside"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginStart="-2dp"
+                                app:imageUrl="@{viewModel.imageUrl}"
+                                app:layout_constraintBottom_toBottomOf="@id/cvCardCircleLightPink"
+                                app:layout_constraintStart_toStartOf="@id/cvCardCircleLightPink"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvDonationCountBuyNow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="6dp"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/ivBuyNow" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/tvDonationCountBuyNow"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvBuyNowAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:textColor="@color/white"
+                                    android:textDirection="locale"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="@string/buy_now"
+                                    android:textColor="@color/white"
+                                    android:textDirection="locale"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-5dp"
+                    android:indeterminate="true"
+                    android:indeterminateTint="#FF681D"
+                    android:scaleY="1.5"
+                    android:visibility="invisible" />
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

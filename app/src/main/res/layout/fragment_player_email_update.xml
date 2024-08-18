@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.boomlotto.viewmodels.PlayerEmailUpdateViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragment_background_color"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.PlayerEmailUpdateFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fragment_background_color"
+                android:gravity="start"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/activity_padding"
+                    android:paddingEnd="@dimen/activity_padding"
+                    android:paddingBottom="@dimen/activity_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/let_keep_our_communication_smooth"
+                        android:textSize="14sp"
+                        android:layout_marginTop="15dp"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_extra_bold"
+                            android:gravity="center"
+                            android:text="@string/current_contact_details"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textDirection="locale"
+                            android:textSize="16sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mobile"
+                                android:textSize="15sp"
+                                android:textDirection="locale"
+                                android:textColor="#9900004c" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/email_address"
+                                android:textSize="15sp"
+                                android:layout_marginTop="5dp"
+                                android:textDirection="locale"
+                                android:textColor="#9900004c" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvMobile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textDirection="locale"
+                                android:textColor="@color/color_app_base_blue" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvEmailAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="5dp"
+                                android:textDirection="locale"
+                                android:textColor="@color/color_app_base_blue" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/icon_stroke_color" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/activity_padding"
+                    android:paddingEnd="@dimen/activity_padding"
+                    android:paddingBottom="@dimen/activity_padding">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llEmailBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        android:gravity="start">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="@string/email"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="3dp"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textDirection="locale" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/withdraw_email_unfocused"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etEmail"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@null"
+                                android:hint="@string/enter_email_id"
+                                android:text="@={viewModel.email}"
+                                android:textColorHint="#A7A8C2"
+                                android:inputType="textEmailAddress"
+                                android:imeOptions="actionDone"
+                                android:textSize="16sp"
+                                android:maxLength="40"
+                                android:textColor="@color/color_app_base_blue"
+                                android:textAlignment="viewStart"
+                                android:textDirection="locale" />
+
+                            <ProgressBar
+                                android:id="@+id/progressBarOtp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:indeterminate="true"
+                                android:layout_margin="5dp"
+                                android:indeterminateTint="@color/color_app_pink"
+                                android:visibility="gone" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardGetOtp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                app:cardElevation="5dp"
+                                app:cardCornerRadius="10dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{()->viewModel.callEmailOtpApi()}"
+                                android:foreground="?attr/selectableItemBackground"
+                                app:cardBackgroundColor="@color/color_app_pink">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textColor="@color/white"
+                                    android:text="@string/get_otp"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:paddingStart="25dp"
+                                    android:paddingEnd="25dp" />
+
+                            </androidx.cardview.widget.CardView>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvOtpSentText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_marginTop="5dp"
+                            android:textColor="#9900004c"
+                            android:textDirection="locale"
+                            android:visibility="gone"
+                            android:text="@string/we_have_sent_the_verification_code_to_your_email_id"
+                            android:textSize="14sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvEnterOtp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="@string/enter_otp"
+                            android:layout_marginTop="20dp"
+                            android:visibility="invisible"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textDirection="locale" />
+
+                        <com.skilrock.boomlotto.utility.BoomTextInputLayout
+                            android:id="@+id/tilOtp"
+                            style="@style/AppTextInputLayoutStyle"
+                            android:visibility="invisible"
+                            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etOtp"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:gravity="start|center_vertical"
+                                android:hint="@string/enter_otp"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:maxLines="1"
+                                android:text="@={viewModel.otp}"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/color_app_base_blue"
+                                android:textColorHint="#A7A8C2"
+                                android:textDirection="locale"
+                                android:textSize="16sp" />
+
+                        </com.skilrock.boomlotto.utility.BoomTextInputLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnContinue"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/pink_button_state"
+                        android:elevation="5dp"
+                        android:text="@string/update_email"
+                        android:visibility="invisible"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:cornerRadius="20dp"
+                        app:elevation="5dp"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

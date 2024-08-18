@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.skilrock.boomlotto",
+  "variantName": "UAT_BoomLottoRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 100,
+      "versionName": "1.0.0",
+      "outputFile": "BOOMLOTTO_UAT-v100-12Aug.apk"
+    }
+  ],
+  "elementType": "File"
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <com.google.android.material.textview.MaterialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tvBall"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/white_ball"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:textDirection="locale"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</layout>

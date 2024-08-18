@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable name="viewModel"
+            type="com.skilrock.boomlotto.viewmodels.LoginOtpViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/activity_padding"
+        tools:context=".ui.activity.LoginOtpActivity">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/verification_code"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            android:textAllCaps="true" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            android:text="@string/we_have_sent_the_verification_code_to_your_mobile_number" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvChangeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            android:layout_marginTop="10dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_otp"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            android:layout_marginTop="10dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtp1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:textDirection="locale"
+                android:maxLength="1"
+                android:textSize="30sp"
+                android:background="@drawable/otp_box_filled"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtp2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:inputType="number"
+                android:textDirection="locale"
+                android:maxLength="1"
+                android:background="@drawable/otp_box_filled"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtp3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:inputType="number"
+                android:textDirection="locale"
+                android:maxLength="1"
+                android:background="@drawable/otp_box_filled"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtp4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:inputType="number"
+                android:textDirection="locale"
+                android:maxLength="1"
+                android:background="@drawable/otp_box_filled" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llReferralCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvReferralCodeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+                android:text="@string/i_have_referral_code"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:layout_marginTop="10dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResendCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resend_code"
+            android:layout_marginTop="10dp" />
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

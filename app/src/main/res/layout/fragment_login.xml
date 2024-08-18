@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.boomlotto.viewmodels.LoginViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.LoginFragment">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    android:text="@string/please_enter_your_mobile_number"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_base_blue"
+                    android:textDirection="locale"
+                    android:textSize="24sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/mobile"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_base_blue"
+                    android:textDirection="locale"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llMobileNumberBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/login_country_view_outline"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llFlag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvFlag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="🇦🇪"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/white"
+                            android:textDirection="locale"
+                            android:textSize="30sp"
+                            android:visibility="invisible"
+                            tools:ignore="HardcodedText" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/open_sans_extra_bold"
+                            android:text="@={viewModel.code}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textDirection="locale"
+                            android:textSize="17sp"
+                            app:fontFamily="@font/open_sans_extra_bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDownArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="▼"
+                            android:textAlignment="viewStart"
+                            android:textColor="#9898B6"
+                            android:textDirection="locale"
+                            android:textSize="8sp"
+                            tools:ignore="HardcodedText,SmallSp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:id="@+id/separator"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:background="#dce9f5" />
+
+                    <!--<com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="-"
+                        android:textAlignment="viewStart"
+                        android:textColor="#9898B6"
+                        android:textDirection="locale"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />-->
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:background="@null"
+                        android:hint="@string/mobile_number"
+                        android:textColorHint="#dce9f5"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textColor="@color/color_app_base_blue"
+                        android:fontFamily="@font/open_sans_extra_bold"
+                        app:fontFamily="@font/open_sans_extra_bold"
+                        android:text="@={viewModel.mobileNumber}"
+                        android:textAlignment="viewStart"
+                        android:textDirection="locale" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_pink"
+                    android:textSize="12sp"
+                    android:textDirection="locale" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRequestOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/pink_button_state"
+                    android:elevation="5dp"
+                    android:text="@string/request_otp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="20dp"
+                    app:elevation="5dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTermsAndConditions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textColor="#838383"
+                    android:textDirection="locale"
+                    android:textSize="13sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

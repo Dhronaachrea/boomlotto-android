@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvMatch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/match"
+            android:textColor="#727272"
+            android:textDirection="locale" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/winners_caps"
+            android:textColor="#727272"
+            android:textDirection="locale" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPrizePool"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/prize_pool"
+            android:textColor="#727272"
+            android:textDirection="locale" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWinning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/winnings"
+            android:textColor="#727272"
+            android:textDirection="locale" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

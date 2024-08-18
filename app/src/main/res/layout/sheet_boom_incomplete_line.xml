@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/teal_a700" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            android:text="@string/incomplete_line" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            android:textColor="#999999" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="@dimen/activity_padding"
+            android:layoutAnimation="@anim/layout_animation_pick_up"
+            android:layout_marginEnd="@dimen/activity_padding" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnComplete"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            app:cornerRadius="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:backgroundTint="#6200E2"
+            android:layout_marginTop="10dp"
+            android:text="@string/complete_last_line" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnProceed"
+            android:layout_width="match_parent"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_height="55dp"
+            app:cornerRadius="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textAllCaps="false"
+            android:textColor="#6200E2"
+            android:layout_marginBottom="20dp"
+            app:strokeWidth="2sp"
+            app:strokeColor="#6200E2"
+            android:text="@string/proceed_discarding_last_line" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

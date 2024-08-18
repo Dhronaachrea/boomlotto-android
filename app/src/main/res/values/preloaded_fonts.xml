@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/archivo_black</item>
+        <item>@font/autour_one</item>
+        <item>@font/black_ops_one</item>
+        <item>@font/luckiest_guy</item>
+        <item>@font/open_sans_extra_bold</item>
+        <item>@font/sonsie_one</item>
+    </array>
+</resources>

@@ -1,0 +1,201 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skilrock.boomlotto.viewmodels.PlayerInboxViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/activity_background"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical"
+        tools:context=".ui.activity.PlayerInboxActivity">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-20dp"
+                app:cardBackgroundColor="@color/fragment_background_color"
+                app:cardCornerRadius="20dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvAllBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/filter_sheet_item_ripple"
+                            android:gravity="center"
+                            android:paddingStart="25dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="25dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/all"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvOffersBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/filter_sheet_item_ripple"
+                            android:gravity="center"
+                            android:paddingStart="20dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="20dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/offers"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvInboxTransactionBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/filter_sheet_item_ripple"
+                            android:gravity="center"
+                            android:paddingStart="20dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="20dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/transaction"
+                            android:textColor="@color/color_app_base_blue"
+                            android:textSize="16sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBgText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/autour_one"
+                        android:gravity="center"
+                        android:text="@string/loading"
+                        android:textColor="#b6b6b6"
+                        android:textDirection="locale"
+                        android:textSize="30sp"
+                        android:textStyle="bold|italic"
+                        app:fontFamily="@font/autour_one" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvInbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:layoutAnimation="@anim/layout_animation_fall_down"
+                        android:visibility="gone" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginBottom="-8dp"
+                        android:indeterminate="true"
+                        android:indeterminateTint="#FF681D"
+                        android:scaleY="3.5"
+                        android:visibility="invisible" />
+
+                    <com.skilrock.boomlotto.utility.SearchView
+                        android:id="@+id/searchBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llDeleteBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSelectAll"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="#e3e3e3"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="@string/select_all"
+                            android:textColor="#808080"
+                            android:textDirection="locale"
+                            android:textSize="15sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDeleteSelected"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
+                            android:layout_weight="1"
+                            android:background="#e3e3e3"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="@string/delete_selected"
+                            android:textColor="#808080"
+                            android:textDirection="locale"
+                            android:textSize="15sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+        <!--<com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F5F7F8"
+            app:cardPreventCornerOverlap="false"
+            style="@style/CustomCardCorners">
+
+        </com.google.android.material.card.MaterialCardView>-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

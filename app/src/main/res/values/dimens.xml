@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_padding">16dp</dimen>
+    <dimen name="drawer_radius">20dp</dimen>
+    <dimen name="tab_bar_selected_height">4dp</dimen>
+    <dimen name="tab_bar_unselected_height">3dp</dimen>
+</resources>

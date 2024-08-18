@@ -1,0 +1,70 @@
+package com.skilrock.boomlotto.utility
+
+import com.skilrock.boomlotto.BuildConfig
+
+const val DEVICE_TYPE                       = "MOBILE"
+const val BUILD_TYPE_UAT                    = "UAT"
+const val LOGIN_DEVICE                      = "ANDROID_APP_CASH"
+const val HEADER_CONTENT_TYPE               = "Content-Type: application/json"
+const val HEADER_RAM_MERCHANT_CODE          = "merchantCode: INFINITI"
+const val MERCHANT_PASSWORD                 = "merchantPwd: ph2Nj5knd4IjWBVLc4mhmYHo1hQDEdS3FlIC2KskHpeHFhsqxD"
+const val HEADER_DMS_USERNAME               = "username: weaver"
+const val HEADER_DMS_PASSWORD               = "password: password"
+const val BOOM_GAME_CODE                    = "DailyLotto"
+const val DEFAULT_RESPONSE_CODE             = -1
+const val REQUEST_IP                        = "132.154.253.254"
+const val RAM                               = "ram"
+const val CMS                               = "cms"
+const val DMS                               = "dms"
+const val WEAVER                            = "weaver"
+const val WEAVER_SESSION_EXPIRY_CODE        = 203
+const val CASHIER                           = "cashier"
+const val SERVICE                           = "B2C"
+const val LANGUAGE_ENGLISH                  = "en"
+const val LANGUAGE_ARABIC                   = "ar"
+const val REDIRECTION_CODE_TICKETS          = "REDIRECTION_CODE_TICKETS"
+const val REDIRECTION_CODE_INSTANT_GAMES    = "REDIRECTION_CODE_INSTANT_GAMES"
+const val TIME_ZONE                         = " (GIST, GMT+4)"
+
+const val LOGIN_OTP_URL                     = "${BuildConfig.RAM_URL}preLogin/sendRegOtp"
+const val LOGIN_URL                         = "${BuildConfig.RAM_URL}preLogin/registerPlayerWithOtp"
+const val COUNTRY_LIST_URL                  = "${BuildConfig.RAM_URL}preLogin/getCountryList"
+const val STATE_URL                         = "${BuildConfig.RAM_URL}preLogin/getStateList"
+const val CITY_URL                          = "${BuildConfig.RAM_URL}preLogin/getCityList"
+const val ID_VERIFICATION_URL               = "${BuildConfig.RAM_URL}postLogin/overallUpdatePlayerProfile"
+const val EMAIL_OTP_URL                     = "${BuildConfig.RAM_URL}postLogin/sendVerficationEmailLink"
+const val EMAIL_VERIFICATION_URL            = "${BuildConfig.RAM_URL}postLogin/verifyEmailWithOtp"
+const val PLAYER_PROFILE_URL                = "${BuildConfig.RAM_URL}postLogin/playerProfile"
+const val PLAYER_DOC_UPLOAD_URL             = "${BuildConfig.RAM_URL}postLogin/setPlayerDocuments"
+
+const val BOOM_LOTTO_GAME_URL               = "${BuildConfig.DMS_URL}DMS/dataMgmt/fetchGameData"
+const val MY_TICKET_URL                     = "${BuildConfig.DMS_URL}DMS/ticket/playMgmt/rmsTrackTicket"
+const val TICKET_DETAIL_URL                 = "${BuildConfig.DMS_URL}DMS/ticket/getTicketDetails"
+const val BOOM_LOTTO_BUY_TICKET_URL         = "${BuildConfig.DMS_URL}DMS/ticket/buy"
+const val RESULT_URL                        = "${BuildConfig.DMS_URL}DMS/draw/result"
+
+const val INSTANT_GAME_LIST_URL             = "${BuildConfig.CMS_URL}api/ige/fetchmatchlist"
+const val INSTANT_GAME_TICKET_LIST          = "${BuildConfig.CMS_URL}InstantGameEngineMS/api/bo/getTicketDetails"
+
+const val WINNER_LIST_URL                   = "${BuildConfig.WIN_URL}index.php/component/weaver/?task=api.getWinnerList"
+const val BANNER_URL                        = "${BuildConfig.WIN_URL}index.php/component/weaver/?task=api.getFooterBanner"
+const val GAME_INFO                         = "${BuildConfig.WIN_URL}index.php/component/weaver/?task=api.getGamesInfo"
+const val SERVER_TIME_URL                   = "${BuildConfig.WIN_URL}index.php/component/weaver/?task=api.getServerTime"
+
+const val MY_TRANSACTION                    = "${BuildConfig.WEAVER_URL}Weaver/service/rest/transactionDetails"
+const val REFER_CODE_URL                    = "${BuildConfig.WEAVER_URL}Weaver/service/rest/referCodeValidation"
+const val VERSION_CONTROL_URL               = "${BuildConfig.WEAVER_URL}Weaver/service/rest/versionControl"
+const val PLAYER_INBOX_URL                  = "${BuildConfig.WEAVER_URL}Weaver/service/rest/playerInbox"
+const val PLAYER_INBOX_ACTIVITY_URL         = "${BuildConfig.WEAVER_URL}Weaver/service/rest/inboxActivity"
+const val HEADER_INFO_URL                   = "${BuildConfig.WEAVER_URL}Weaver/service/rest/fetchHeaderInfo"
+const val LOGOUT_URL                        = "${BuildConfig.WEAVER_URL}Weaver/service/rest/playerLogout"
+
+const val PAYMENT_OPTIONS_URL               = "${BuildConfig.CASHIER_URL}player/payment/options"
+const val PENDING_TRANSACTIONS_URL          = "${BuildConfig.CASHIER_URL}player/payment/transactionDetails"
+const val ADD_NEW_ACCOUNT_URL               = "${BuildConfig.CASHIER_URL}player/payment/accounts/add"
+const val DEPOSIT_REQUEST_URL               = "${BuildConfig.CASHIER_URL}player/payment/depositRequest"
+const val WITHDRAWAL_REQUEST_URL            = "${BuildConfig.CASHIER_URL}player/payment/withdrawalRequest"
+
+const val CHECK_BONUS_STATUS_URL            = "${BuildConfig.BONUS_URL}player/checkBonusStatusPlayer"
+const val ANALYTICS_URL                     = "${BuildConfig.ANALYTICS_URL}client/updateAnalytics"
+const val TEST_APP_VERSION_URL              = "https://appversion.pythonanywhere.com/AppVersion/"

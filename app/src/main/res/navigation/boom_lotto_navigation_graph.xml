@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/boom_lotto_navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.skilrock.boomlotto.ui.fragment.HomeFragment"
+        android:label="HomeFragment">
+
+        <action
+            android:id="@+id/action_homeFragment_to_myTicketsFragment"
+            app:destination="@id/myTicketsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_winnerListFragment"
+            app:destination="@id/winnerListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myTicketsFragment"
+        android:name="com.skilrock.boomlotto.ui.fragment.MyTicketsFragment"
+        android:label="MyTicketsFragment" />
+
+    <fragment
+        android:id="@+id/winnerListFragment"
+        android:name="com.skilrock.boomlotto.ui.fragment.WinnerListFragment"
+        android:label="WinnerListFragment" />
+</navigation>
